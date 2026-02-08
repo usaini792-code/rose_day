@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rose Day 🌹</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffb6c1,#ffe4e9);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:25px;
+  width:320px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+}
+
+img{
+  width:170px;
+  transition:0.3s;
+}
+
+h2{
+  color:#ff4d6d;
+}
+
+.buttons{
+  margin-top:20px;
+}
+
+button{
+  padding:10px 22px;
+  border:none;
+  border-radius:20px;
+  font-size:16px;
+  cursor:pointer;
+  margin:8px;
+}
+
+#yes{
+  background:#ff4d6d;
+  color:white;
+}
+
+#no{
+  background:#e0e0e0;
+}
+
+.hidden{display:none;}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <img id="cat" src="https://i.imgur.com/J5LVHEL.png">
+  <h2 id="text">Will you take this rose? 🌹</h2>
+
+  <div class="buttons">
+    <button id="yes" onclick="yesClick()">Yes 💗</button>
+    <button id="no" onclick="noClick()">No 🙄</button>
+  </div>
+</div>
+
+<script>
+let noCount = 0;
+
+function yesClick(){
+  document.getElementById("cat").src="https://i.imgur.com/1X5R1wM.png";
+  document.getElementById("text").innerHTML="Happy Rose Day 🌹💖";
+  document.querySelector(".buttons").classList.add("hidden");
+}
+
+function noClick(){
+  noCount++;
+  document.getElementById("cat").src="https://i.imgur.com/Z7cYkqY.png";
+
+  if(noCount===1){
+    document.getElementById("text").innerHTML="Seriously? Try again 😾";
+  }else{
+    document.getElementById("text").innerHTML="You have no choice now 😼";
+    document.getElementById("no").style.display="none";
+  }
+}
+</script>
+
+</body>
+</html>
